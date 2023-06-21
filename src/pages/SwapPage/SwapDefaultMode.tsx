@@ -76,13 +76,13 @@ const SwapDefaultMode: React.FC<{
                       {token2 && <SwapTokenDetailsHorizontal token={token2} />}
                     </Box>
                   </Grid>
-                  <Grid item xs={12}>
+                  {/* <Grid item xs={12}>
                     {token1 && token2 && (
                       <Box className='wrapper'>
                         <LiquidityPools token1={token1} token2={token2} />
                       </Box>
                     )}
-                  </Grid>
+                  </Grid> */}
                 </Grid>
               </Grid>
             )}
@@ -98,6 +98,13 @@ const SwapDefaultMode: React.FC<{
         </Grid>
         <Grid item lg={4}>
           <Grid container justifyContent='flex-start' spacing={2}>
+            <Grid item xs={12}>
+              {token1 && token2 && (
+                <Box className='wrapper'>
+                  <LiquidityPools token1={token1} token2={token2} />
+                </Box>
+              )}
+            </Grid>
             {/* {rightOpen && (
               <Grid item xs={12} lg={10}>
                 <Grid container spacing={2}>

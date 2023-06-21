@@ -54,7 +54,7 @@
 
 .bg-primary {
   // background-color: $primary;
-  background-image: $primaryGradient;
+  background-image: $primaryGradient !important;
 }
 
 .bg-primaryLight {
@@ -87,7 +87,7 @@
 
 .border-gradient {
   border: 1px solid $divider;
-  border-image: $primaryGradient;
+  border-image: $primaryGradient !important;
 }
 
 .border-left {

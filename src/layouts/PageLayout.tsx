@@ -97,7 +97,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, name }) => {
       {openPassModal && <PasswordModal />}
       {showBetaBanner && <BetaWarningBanner />}
       <Header />
-      {!isProMode && <Background fallback={false} />}
+      {/* {!isProMode && <Background fallback={false} />} */}
       <Box className={pageWrapperClassName}>{children}</Box>
       <Footer />
     </Box>

@@ -33,8 +33,10 @@ const CurrencySelect: React.FC<CurrencySelectProps> = ({
       <Box
         className={
           !bgClass
-            ? `currencyButton ${currency ? 'currencySelected' : 'noCurrency'}`
-            : bgClass
+            ? `currencyButton bg-primary ${
+                currency ? 'currencySelected' : 'noCurrency'
+              }`
+            : `${bgClass} bg-primary`
         }
         onClick={handleOpenModal}
       >

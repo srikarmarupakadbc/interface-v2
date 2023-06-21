@@ -1,4 +1,5 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useMemo } from 'react';
+import { useActiveWeb3React } from 'hooks';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Switch, Route } from 'react-router-dom';
 import {
@@ -65,6 +66,8 @@ import Background from 'layouts/Background';
 import GasUpdater from 'state/application/gasUpdater';
 import { RedirectExternal } from 'components/RedirectExternal/RedirectExternal';
 import NotFound404Page from 'pages/NotFound404Page';
+// import { USDC, USDT } from 'constants/v3/addresses';
+// import { ChainId } from '@uniswap/sdk';
 
 const ThemeProvider: React.FC = ({ children }) => {
   const theme = mainTheme;
@@ -106,6 +109,14 @@ function Updaters() {
 const queryClient = new QueryClient();
 
 const App: React.FC = () => {
+  // const { chainId, connector } = useActiveWeb3React();
+  // const swapCurrencyStr = useMemo(() => {
+  //   if (!chainId) return '';
+  //   if (chainId === ChainId.ZKTESTNET)
+  //     return `&currency1=${USDT[chainId].address}`;
+  //   return `&currency1=${USDC[chainId].address}`;
+  // }, [chainId]);
+
   return (
     <QueryClientProvider client={queryClient}>
       <Route component={GoogleAnalyticsReporter} />
@@ -118,9 +129,11 @@ const App: React.FC = () => {
               <Switch>
                 <Route exact path='/'>
                   <PageLayout>
-                    <LandingPage />
+                    {/* <LandingPage /> */}
+                    <SwapPage />
                   </PageLayout>
                 </Route>
+                {/* <Route exact path={`/swap?currency0=ETH${swapCurrencyStr}`}> */}
                 <Route exact path='/swap/:version?'>
                   <PageLayout>
                     <SwapPage />

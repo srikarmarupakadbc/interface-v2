@@ -96,7 +96,7 @@ const PoolFinderModal: React.FC<PoolFinderModalProps> = ({ open, onClose }) => {
         </Box>
         <Box
           mt={2}
-          className='borderedCard'
+          className='borderedCard bg-primary'
           onClick={() => {
             setShowSearch(true);
             setActiveField(Fields.TOKEN0);
@@ -117,7 +117,7 @@ const PoolFinderModal: React.FC<PoolFinderModalProps> = ({ open, onClose }) => {
           <Plus size='20' className='text-secondary' />
         </Box>
         <Box
-          className='borderedCard'
+          className='borderedCard bg-primary'
           onClick={() => {
             setShowSearch(true);
             setActiveField(Fields.TOKEN1);

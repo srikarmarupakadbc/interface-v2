@@ -4,7 +4,7 @@ import { SettingsModal } from 'components';
 import AdsSlider from 'components/AdsSlider';
 import { useActiveWeb3React, useIsProMode } from 'hooks';
 import 'pages/styles/swap.scss';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useIsV2 } from 'state/application/hooks';
 import { Field } from 'state/swap/actions';
 import { useDerivedSwapInfo } from 'state/swap/hooks';
@@ -13,6 +13,7 @@ import { getPairAddress, getPairAddressV3 } from 'utils';
 import { wrappedCurrency, wrappedCurrencyV3 } from 'utils/wrappedCurrency';
 import SwapDefaultMode from './SwapDefaultMode';
 import SwapPageHeader from './SwapPageHeader';
+import { USDC, USDT } from 'constants/v3/addresses';
 import SwapProMain from './SwapProMain';
 
 const SwapPage: React.FC = () => {
@@ -35,6 +36,30 @@ const SwapPage: React.FC = () => {
   const isMobile = useMediaQuery(breakpoints.down('xs'));
   const token1V3 = wrappedCurrencyV3(currenciesV3[Field.INPUT], chainIdToUse);
   const token2V3 = wrappedCurrencyV3(currenciesV3[Field.OUTPUT], chainIdToUse);
+
+  const swapCurrencyStr = useMemo(() => {
+    if (!chainId) return '';
+    if (chainId === ChainId.ZKTESTNET)
+      return `&currency1=${USDT[chainId].address}`;
+    return `&currency1=${USDC[chainId].address}`;
+  }, [chainId]);
+
+  useEffect(() => {
+    if (!location.pathname.includes('/swap')) {
+      console.log({ location: location.href });
+      location.href =
+        location.origin +
+        `/#/swap?currency0=ETH` +
+        swapCurrencyStr +
+        `&swapIndex=0`;
+      // console.log(
+      //   location.origin +
+      //     `/#/swap?currency0=ETH` +
+      //     swapCurrencyStr +
+      //     `&swapIndex=0`,
+      // );
+    }
+  }, []);
 
   useEffect(() => {
     const token1Address = isV2 ? token1?.address : token1V3?.address;

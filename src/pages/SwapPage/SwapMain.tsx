@@ -14,6 +14,8 @@ import { useIsV2 } from 'state/application/hooks';
 import { Limit, TWAP } from './LimitAndTWAP/LimitAndTWAP';
 import SwapCrossChain from './SwapCrossChain';
 import SwapV3Page from './V3/Swap';
+// import { ChainId } from '@uniswap/sdk';
+// import { USDC, USDT } from 'constants/v3/addresses';
 
 const SWAP_BEST_TRADE = 0;
 const SWAP_NORMAL = 1;
@@ -88,6 +90,12 @@ const SwapMain: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = React.useState(
     Number(swapType?.toString() ?? '0'),
   );
+  // const swapCurrencyStr = useMemo(() => {
+  //   if (!chainId) return '';
+  //   if (chainId === ChainId.ZKTESTNET)
+  //     return `&currency1=${USDT[chainId].address}`;
+  //   return `&currency1=${USDC[chainId].address}`;
+  // }, [chainId]);
 
   const redirectWithSwapType = (swapTypeTo: number) => {
     const currentPath = history.location.pathname + history.location.search;
@@ -197,7 +205,7 @@ const SwapMain: React.FC = () => {
       >
         <Box display='flex' width={1}>
           {!isProMode ? (
-            <Box display={'flex'} className='tabContainer border-gradient'>
+            <Box display={'flex'} className='tabContainer'>
               {dropDownMenuText && (
                 <Button
                   id='swap-button'
@@ -208,7 +216,7 @@ const SwapMain: React.FC = () => {
                   disableElevation
                   onClick={handleClickListItem}
                   endIcon={<KeyboardArrowDown />}
-                  className={`tab tabMenu ${
+                  className={`border-gradient tab tabMenu ${
                     selectedIndex !== SWAP_CROSS_CHAIN ? 'activeTab' : ''
                   }`}
                 >
