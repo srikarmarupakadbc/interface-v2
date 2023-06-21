@@ -602,6 +602,7 @@ const AddLiquidity: React.FC<{
               approvalA !== ApprovalState.APPROVED ||
               approvalB !== ApprovalState.APPROVED)
           }
+          className='bg-primary'
           onClick={account && isSupportedNetwork ? onAdd : connectWallet}
         >
           {buttonText}

@@ -41,7 +41,7 @@ const SwapDefaultMode: React.FC<{
       <Grid container justifyContent='center' spacing={2}>
         <Grid item xs={12} sm={12} md={6} lg={4}>
           <Grid container justifyContent='flex-end' spacing={2}>
-            <Grid item>
+            {/* <Grid item>
               <Box
                 sx={{ display: { xs: 'none', lg: 'block' } }}
                 className={`btn-swap-widget ${
@@ -55,7 +55,7 @@ const SwapDefaultMode: React.FC<{
                 {!leftOpen && <NavigateBefore />}
                 {leftOpen && <NavigateNext />}
               </Box>
-            </Grid>
+            </Grid> */}
             {leftOpen && (
               <Grid item xs={12} lg={10}>
                 <Grid container spacing={2}>
@@ -98,7 +98,7 @@ const SwapDefaultMode: React.FC<{
         </Grid>
         <Grid item lg={4}>
           <Grid container justifyContent='flex-start' spacing={2}>
-            {rightOpen && (
+            {/* {rightOpen && (
               <Grid item xs={12} lg={10}>
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
@@ -111,8 +111,8 @@ const SwapDefaultMode: React.FC<{
                   </Grid>
                 </Grid>
               </Grid>
-            )}
-            <Grid item>
+            )} */}
+            {/* <Grid item>
               <Box
                 className='btn-swap-widget'
                 sx={{ display: { xs: 'none', lg: 'block' } }}
@@ -121,7 +121,7 @@ const SwapDefaultMode: React.FC<{
                 {rightOpen && <NavigateBefore />}
                 {!rightOpen && <NavigateNext />}
               </Box>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
       </Grid>

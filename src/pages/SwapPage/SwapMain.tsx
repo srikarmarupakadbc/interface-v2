@@ -55,15 +55,15 @@ const SwapMain: React.FC = () => {
     if (v2) {
       tabs.push({ name: 'market', key: SWAP_NORMAL });
     }
-    if (v3) {
-      tabs.push({ name: 'marketV3', key: SWAP_V3 });
-    }
+    // if (v3) {
+    //   tabs.push({ name: 'marketV3', key: SWAP_V3 });
+    // }
     if (showLimitOrder) {
       tabs.push({ name: 'limit', key: SWAP_LIMIT });
     }
-    if (showTwapOrder) {
-      tabs.push({ name: 'twap', key: SWAP_TWAP });
-    }
+    // if (showTwapOrder) {
+    //   tabs.push({ name: 'twap', key: SWAP_TWAP });
+    // }
     if (showCrossChain) {
       tabs.push({
         name: 'crossChain',
@@ -197,7 +197,7 @@ const SwapMain: React.FC = () => {
       >
         <Box display='flex' width={1}>
           {!isProMode ? (
-            <Box display={'flex'} className='tabContainer'>
+            <Box display={'flex'} className='tabContainer border-gradient'>
               {dropDownMenuText && (
                 <Button
                   id='swap-button'
@@ -238,7 +238,7 @@ const SwapMain: React.FC = () => {
                   ),
                 )}
               </Menu>
-              {showCrossChain && (
+              {/* {showCrossChain && (
                 <Box
                   className={`tab ${
                     selectedIndex === SWAP_CROSS_CHAIN ? 'activeTab' : ''
@@ -251,7 +251,7 @@ const SwapMain: React.FC = () => {
                 >
                   <p className='trade-btn'>{t('crossChain')}</p>
                 </Box>
-              )}
+              )} */}
             </Box>
           ) : (
             <>

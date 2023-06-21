@@ -51,7 +51,7 @@ const HeroSection: React.FC<{ globalData: any; v3GlobalData: any }> = ({
       <Box mt={2} width={200} height={48}>
         <Button
           fullWidth
-          className='bg-blue1 p'
+          className='bg-primary p'
           style={{
             borderRadius: '30px',
             height: '100%',

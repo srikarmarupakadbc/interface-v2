@@ -17,7 +17,7 @@ const BuySpritzSection: React.FC = () => {
           <h3>{t('payBillWithCrypto')}</h3>
           <p>{t('payBillWithCryptoDesc')}</p>
           <Button
-            className='rounded'
+            className='rounded bg-primary'
             onClick={() => window.open(SPRITZ_LINK, 'blank')}
           >
             <small>{t('payWithCrypto')}</small>

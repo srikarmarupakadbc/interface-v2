@@ -34,7 +34,7 @@ const BuyFiatButton: React.FC<BuyFiatButtonProps> = ({
         </Box>
       ) : (
         <Button
-          className={`rounded ${fullWidth ? 'fullWidth' : ''} `}
+          className={`rounded bg-primary ${fullWidth ? 'fullWidth' : ''} `}
           onClick={() => {
             setShowMeldWidgetWidget(true);
           }}

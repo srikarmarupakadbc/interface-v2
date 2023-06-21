@@ -689,7 +689,11 @@ const SwapV3Page: React.FC = () => {
 
         <Box className='swapButtonWrapper'>
           {!account ? (
-            <Button fullWidth onClick={toggleWalletModal}>
+            <Button
+              fullWidth
+              onClick={toggleWalletModal}
+              className='bg-primary'
+            >
               {t('connectWallet')}
             </Button>
           ) : showWrap ? (

@@ -26,7 +26,7 @@ const VersionToggle: React.FC = () => {
   const toggleDisabled = isAnalyticsPage && !analyticsLoaded;
 
   useEffect(() => {
-    updateIsV2(version === 'v2');
+    updateIsV2(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [version]);
 
@@ -67,7 +67,7 @@ const VersionToggle: React.FC = () => {
         <small>{t('V2')}</small>
       </Box>
 
-      <Box
+      {/* <Box
         className={!isV2 && version !== 'total' ? 'version-toggle-active' : ''}
         onClick={() => {
           if (!toggleDisabled) {
@@ -76,9 +76,9 @@ const VersionToggle: React.FC = () => {
         }}
       >
         <small>{t('V3')}</small>
-      </Box>
+      </Box> */}
 
-      {isAnalyticsPage && (
+      {/* {isAnalyticsPage && (
         <Box
           className={version === 'total' ? 'version-toggle-active' : ''}
           onClick={() => {
@@ -89,7 +89,7 @@ const VersionToggle: React.FC = () => {
         >
           <small>{t('total')}</small>
         </Box>
-      )}
+      )} */}
     </Box>
   );
 };

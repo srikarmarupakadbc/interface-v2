@@ -97,9 +97,9 @@ const SwapPage: React.FC = () => {
           token2={isV2 ? token2 : token2V3}
         />
       )}
-      <Box maxWidth={isMobile ? '320px' : '1136px'} margin='24px auto'>
+      {/* <Box maxWidth={isMobile ? '320px' : '1136px'} margin='24px auto'>
         <AdsSlider sort='analytics' />
-      </Box>
+      </Box> */}
     </Box>
   );
 };

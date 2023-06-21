@@ -735,6 +735,7 @@ const Swap: React.FC<{
           <Button
             fullWidth
             disabled={swapButtonDisabled as boolean}
+            className='bg-primary'
             onClick={account && isSupportedNetwork ? onSwap : connectWallet}
           >
             {swapButtonText}

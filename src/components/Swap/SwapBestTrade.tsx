@@ -1056,6 +1056,7 @@ const SwapBestTrade: React.FC<{
                 optimalRateError ||
                 swapButtonDisabled) as boolean
             }
+            className='bg-primary'
             onClick={account && isSupportedNetwork ? onParaswap : connectWallet}
           >
             {swapButtonText}

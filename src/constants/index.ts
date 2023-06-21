@@ -205,10 +205,10 @@ export const GlobalConst = {
 export const SUPPORTED_CHAINIDS = [
   ChainId.MATIC,
   ChainId.MUMBAI,
-  ChainId.DOGECHAIN,
-  ChainId.DOEGCHAIN_TESTNET,
-  ChainId.ZKTESTNET,
-  ChainId.ZKEVM,
+  // ChainId.DOGECHAIN,
+  // ChainId.DOEGCHAIN_TESTNET,
+  // ChainId.ZKTESTNET,
+  // ChainId.ZKEVM,
 ];
 
 export interface GammaPair {
