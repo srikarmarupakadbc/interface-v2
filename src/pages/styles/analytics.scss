@@ -14,7 +14,7 @@
 }
 
 .selectedTab {
-  background: $secondary2;
+  background: $bgPalette;
   & p {
     color: $textPrimary;
   }
@@ -35,7 +35,7 @@
 }
 
 .panel {
-  background: $grey3;
+  background: $bgPalette;
   border-radius: 20px;
   padding: 24px;
   @include media('screen', '<phone') {

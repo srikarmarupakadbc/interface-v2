@@ -84,7 +84,7 @@
 
 .tab:hover {
     cursor: pointer;
-    background: rgba(68, 138, 255, 0.3) !important;  
+    background: $primaryGradient !important;  
     color: white !important;
     & p {
       color: white;
@@ -93,8 +93,9 @@
 
 .activeTab {
   border-radius: 2rem;
-  border: 1px solid #448aff;
-  background: rgba(68, 138, 255, 0.3);
+  background: $bgColor;
+  // border: 1px solid transparent;
+  // border-image: $primaryGradient 1;
   & p {
     color: #c7cad9;
   }

@@ -46,18 +46,11 @@ const SwapPage: React.FC = () => {
 
   useEffect(() => {
     if (!location.pathname.includes('/swap')) {
-      console.log({ location: location.href });
       location.href =
         location.origin +
         `/#/swap?currency0=ETH` +
         swapCurrencyStr +
         `&swapIndex=0`;
-      // console.log(
-      //   location.origin +
-      //     `/#/swap?currency0=ETH` +
-      //     swapCurrencyStr +
-      //     `&swapIndex=0`,
-      // );
     }
   }, []);
 

@@ -216,7 +216,7 @@ const SwapMain: React.FC = () => {
                   disableElevation
                   onClick={handleClickListItem}
                   endIcon={<KeyboardArrowDown />}
-                  className={`border-gradient tab tabMenu ${
+                  className={`tab tabMenu ${
                     selectedIndex !== SWAP_CROSS_CHAIN ? 'activeTab' : ''
                   }`}
                 >

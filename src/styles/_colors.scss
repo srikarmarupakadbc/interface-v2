@@ -53,8 +53,11 @@
 }
 
 .bg-primary {
-  // background-color: $primary;
   background-image: $primaryGradient !important;
+  // & :hover{
+  //   background-image: $primaryGradientHover !important;
+  //   opacity: 0.2;
+  // }
 }
 
 .bg-primaryLight {
@@ -86,8 +89,9 @@
 }
 
 .border-gradient {
-  border: 1px solid $divider;
+  border: 1px solid transparent !important;
   border-image: $primaryGradient !important;
+  border-image-slice: 1 !important;
 }
 
 .border-left {
