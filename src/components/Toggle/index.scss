@@ -16,7 +16,7 @@
       color: $textSecondary;
     }
     &.version-toggle-active {
-      background-color: $primaryLight;
+      background-color: $bgColor;
       border: 1px solid $primary;
       & small {
         color: $textPrimary;
