@@ -18,7 +18,7 @@ export const TokensList: TokenList = {
       symbol: 'BS',
       decimals: 18,
       chainId: 137,
-      logoURI: 'public/logo_circle.png',
+      logoURI: 'public/logo_circle1.png',
     },
     {
       name: '4INT',
