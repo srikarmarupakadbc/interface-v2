@@ -274,6 +274,36 @@ export const WMATIC_EXTENDED: { [chainId: number]: TokenV3 } = {
   ),
 };
 
+export const BS: { [chainId: number]: Token } = {
+  [ChainId.MATIC]: new Token(
+    ChainId.MATIC,
+    '0x0C47298beEe5203358e7Bc30B9954B584361eAB5',
+    18,
+    'BS',
+    'Black Stallion',
+  ),
+  // [ChainId.DOGECHAIN]: new Token(
+  //   ChainId.DOGECHAIN,
+  //   '0x765277EebeCA2e31912C9946eAe1021199B39C61',
+  //   6,
+  //   'USDC',
+  //   'USD Coin',
+  // ),
+  // [ChainId.ZKTESTNET]: new Token(
+  //   ChainId.ZKTESTNET,
+  //   '0x6c28AeF8977c9B773996d0e8376d2EE379446F2f',
+  //   6,
+  //   'USDC',
+  //   'USD Coin',
+  // ),
+  // [ChainId.ZKEVM]: new Token(
+  //   ChainId.ZKEVM,
+  //   '0xA8CE8aee21bC2A48a5EF670afCc9274C7bbbC035',
+  //   6,
+  //   'USDC',
+  //   'USD Coin',
+  // ),
+};
 export const USDC: { [chainId: number]: Token } = {
   [ChainId.MATIC]: new Token(
     ChainId.MATIC,
@@ -645,6 +675,7 @@ export const SUGGESTED_BASES: {
 } = {
   [ChainId.MATIC]: [
     ...WETH_ONLY[ChainId.MATIC],
+    BS[ChainId.MATIC],
     DAI[ChainId.MATIC],
     USDC[ChainId.MATIC],
     USDT[ChainId.MATIC],

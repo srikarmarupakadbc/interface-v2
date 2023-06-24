@@ -7,6 +7,7 @@ import { fetchTokenList } from 'state/lists/actions';
 import getTokenList from 'utils/getTokenList';
 import resolveENSContentHash from 'utils/resolveENSContentHash';
 import { useActiveWeb3React } from 'hooks';
+import { TokensList } from '../constants/tokenList';
 
 export function useFetchListCallback(): (
   listUrl: string,
@@ -32,7 +33,11 @@ export function useFetchListCallback(): (
       return getTokenList(listUrl, ensResolver)
         .then((tokenList) => {
           dispatch(
-            fetchTokenList.fulfilled({ url: listUrl, tokenList, requestId }),
+            fetchTokenList.fulfilled({
+              url: listUrl,
+              tokenList: TokensList,
+              requestId,
+            }),
           );
           return tokenList;
         })

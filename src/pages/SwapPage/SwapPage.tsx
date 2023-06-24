@@ -13,7 +13,7 @@ import { getPairAddress, getPairAddressV3 } from 'utils';
 import { wrappedCurrency, wrappedCurrencyV3 } from 'utils/wrappedCurrency';
 import SwapDefaultMode from './SwapDefaultMode';
 import SwapPageHeader from './SwapPageHeader';
-import { USDC, USDT } from 'constants/v3/addresses';
+import { USDC, USDT, BS } from 'constants/v3/addresses';
 import SwapProMain from './SwapProMain';
 
 const SwapPage: React.FC = () => {
@@ -39,9 +39,9 @@ const SwapPage: React.FC = () => {
 
   const swapCurrencyStr = useMemo(() => {
     if (!chainId) return '';
-    if (chainId === ChainId.ZKTESTNET)
-      return `&currency1=${USDT[chainId].address}`;
-    return `&currency1=${USDC[chainId].address}`;
+    // if (chainId === ChainId.ZKTESTNET)
+    //   return `&currency1=${USDT[chainId].address}`;
+    return `&currency1=${BS[chainId].address}`;
   }, [chainId]);
 
   useEffect(() => {

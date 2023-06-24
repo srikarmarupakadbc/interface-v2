@@ -7,10 +7,10 @@ export const AVERAGE_L1_BLOCK_TIME = 12000;
 export const CHAIN_IDS_TO_NAMES = {
   [ChainId.MATIC]: 'matic',
   [ChainId.MUMBAI]: 'mumbai',
-  [ChainId.DOGECHAIN]: 'dogechain',
-  [ChainId.DOEGCHAIN_TESTNET]: 'dogechain_testnet',
-  [ChainId.ZKEVM]: 'zkevm',
-  [ChainId.ZKTESTNET]: 'zkevm_testnet',
+  // [ChainId.DOGECHAIN]: 'dogechain',
+  // [ChainId.DOEGCHAIN_TESTNET]: 'dogechain_testnet',
+  // [ChainId.ZKEVM]: 'zkevm',
+  // [ChainId.ZKTESTNET]: 'zkevm_testnet',
 };
 
 export enum TxnType {
@@ -1262,6 +1262,13 @@ export const GlobalValue = {
         0,
         'EMPTY',
         'EMPTY',
+      ),
+      BS: new Token(
+        ChainId.MATIC,
+        '0x0C47298beEe5203358e7Bc30B9954B584361eAB5',
+        6,
+        'BS',
+        'Black Stallion',
       ),
       USDC: new Token(
         ChainId.MATIC,

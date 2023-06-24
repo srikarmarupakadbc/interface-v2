@@ -273,7 +273,7 @@ const Header: React.FC = () => {
         pendingTransactions={pending}
         confirmedTransactions={confirmed}
       />
-      <Link to='/'>
+      <Link to={`/swap?currency0=ETH${swapCurrencyStr}`}>
         <img
           src={QuickIcon}
           alt='QuickLogo'
