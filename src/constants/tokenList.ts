@@ -18,7 +18,7 @@ export const TokensList: TokenList = {
       symbol: 'BS',
       decimals: 18,
       chainId: 137,
-      logoURI: 'public/logo_circle.png',
+      logoURI: 'https://s2.coinmarketcap.com/static/img/coins/64x64/23307.png',
     },
     {
       name: '4INT',
