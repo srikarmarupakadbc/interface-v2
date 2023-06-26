@@ -281,7 +281,7 @@ export default function WithdrawGammaLiquidityModal({
         </Box>
         <Box mt={2}>
           <Button
-            className='gamma-liquidity-item-button'
+            className='gamma-liquidity-item-button bg-primary'
             disabled={buttonDisabled}
             onClick={() => setShowConfirm(true)}
             fullWidth

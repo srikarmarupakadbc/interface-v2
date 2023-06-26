@@ -317,7 +317,7 @@ export function SupplyLiquidityV3() {
           />
         ) : (
           <Button
-            className='v3-supply-liquidity-button'
+            className='v3-supply-liquidity-button bg-primary'
             onClick={() => {
               if (account) {
                 toggletNetworkSelectionModal();

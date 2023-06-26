@@ -343,7 +343,7 @@ const WalletModal: React.FC<WalletModalProps> = ({
     }
     return (
       <Box paddingX={3} paddingY={4}>
-        <Box className='flex justify-between'>
+        <Box className='flex justify-between bg-primary'>
           <h5>{t('connectWallet')}</h5>
           <Close className='cursor-pointer' onClick={toggleWalletModal} />
         </Box>
