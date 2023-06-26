@@ -144,7 +144,7 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
         ) : (
           <></>
         )}
-        <Button onClick={onConfirm} className='swapButton'>
+        <Button onClick={onConfirm} className='swapButton bg-primary'>
           {t('confirmSwap')}
         </Button>
       </Box>
