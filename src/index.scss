@@ -258,6 +258,10 @@ body {
   justify-content: flex-end;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -377,6 +381,10 @@ body {
 
 .text-link:hover {
   opacity: 0.9;
+}
+
+.text-left{
+  text-align: left;
 }
 
 .text-lg {

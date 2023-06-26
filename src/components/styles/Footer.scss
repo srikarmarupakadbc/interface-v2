@@ -2,7 +2,9 @@
 
 .footer {
   text-align: center;
-  padding-bottom: 110px;
+  padding: 50px 100px;
+  border-top: 1px solid $grey4;
+  // padding-bottom: 110px;
   position: relative;
   & p {
     font-size: 14px;
