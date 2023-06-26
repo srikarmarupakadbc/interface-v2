@@ -29,6 +29,11 @@
 #swap-page {
   padding-top: 88px;
 }
+@media screen and (max-width: 760px) {
+  #swap-page {
+    padding-top: 10px;
+  }
+}
 
 .swapItem {
   padding: 0 16px;
@@ -84,7 +89,7 @@
 
 .tab:hover {
     cursor: pointer;
-    background: $primaryGradient !important;  
+    background: $primaryGradient !important;
     color: white !important;
     & p {
       color: white;
