@@ -285,7 +285,7 @@ const SwapMain: React.FC = () => {
               }}
             >
               <Box margin='0 16px' className='flex items-center'>
-                {showProMode && (
+                {/* {showProMode && (
                   <Box className='flex items-center' mr={1}>
                     <span
                       className='text-secondary text-uppercase'
@@ -300,7 +300,7 @@ const SwapMain: React.FC = () => {
                       }}
                     />
                   </Box>
-                )}
+                )} */}
                 <Box className='headingItem'>
                   <SettingsIcon onClick={() => setOpenSettingsModal(true)} />
                 </Box>
