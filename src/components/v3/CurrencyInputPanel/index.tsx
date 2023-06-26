@@ -126,7 +126,7 @@ export default function CurrencyInputPanel({
         <Box mb={2}>
           <Box>
             <Box
-              className={`currencyButton  ${'token-select-background-v3'}  ${
+              className={`currencyButton bg-primary ${'token-select-background-v3'}  ${
                 currency ? 'currencySelected' : 'noCurrency'
               }`}
               onClick={() => {

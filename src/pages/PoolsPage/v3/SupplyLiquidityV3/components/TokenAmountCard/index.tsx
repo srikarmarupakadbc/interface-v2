@@ -220,7 +220,7 @@ export function TokenAmountCard({
             </Box>
           </Box>
         ) : (
-          <Box className='token-amount-select-token'>
+          <Box className='token-amount-select-token bg-primary'>
             <p className='weight-600'>{t('selectToken')}</p>
           </Box>
         )}

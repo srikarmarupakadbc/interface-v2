@@ -661,7 +661,7 @@ export function AddLiquidityButton({
         />
       )}
       <Button
-        className='v3-supply-liquidity-button'
+        className='v3-supply-liquidity-button bg-primary'
         disabled={!isReady}
         onClick={amountToWrap ? onWrapMatic : onAddLiquidity}
       >
