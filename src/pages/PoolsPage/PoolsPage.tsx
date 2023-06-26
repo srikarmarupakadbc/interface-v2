@@ -35,16 +35,16 @@ const PoolsPage: React.FC = () => {
   return (
     <Box width='100%' mb={3}>
       <Box className='pageHeading'>
-        <Box className='flex row items-center'>
+        {/* <Box className='flex row items-center'>
           <h4>{t('pool')}</h4>
           {v2 && v3 && (
             <Box ml={2}>
               <VersionToggle />
             </Box>
           )}
-        </Box>
+        </Box> */}
 
-        {helpURL && (
+        {/* {helpURL && (
           <Box
             className='helpWrapper'
             onClick={() => window.open(helpURL, '_blank')}
@@ -52,7 +52,7 @@ const PoolsPage: React.FC = () => {
             <small>{t('help')}</small>
             <HelpIcon />
           </Box>
-        )}
+        )} */}
       </Box>
       <Grid container spacing={4}>
         <Grid item xs={12} sm={12} md={5}>

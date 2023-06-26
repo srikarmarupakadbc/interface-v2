@@ -10,7 +10,8 @@ const SwapPageHeader: React.FC<{ proMode: boolean }> = ({ proMode }) => {
   return proMode ? (
     <></>
   ) : (
-    <Box className='pageHeading'>
+    <>
+      {/* <Box className='pageHeading'>
       <h4>{t('swap')}</h4>
       {helpURL && (
         <Box
@@ -21,7 +22,8 @@ const SwapPageHeader: React.FC<{ proMode: boolean }> = ({ proMode }) => {
           <HelpIcon />
         </Box>
       )}
-    </Box>
+    </Box> */}
+    </>
   );
 };
 

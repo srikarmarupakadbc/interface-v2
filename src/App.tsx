@@ -77,7 +77,7 @@ const ThemeProvider: React.FC = ({ children }) => {
 
 const Providers: React.FC = ({ children }) => {
   return (
-    <Suspense fallback={<Background fallback={true} />}>
+    <Suspense fallback={<></>}>
       <ThemeProvider>
         <CssBaseline />
         {children}

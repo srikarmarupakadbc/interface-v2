@@ -101,7 +101,7 @@ const SwapPage: React.FC = () => {
           onClose={() => setOpenSettingsModal(false)}
         />
       )}
-      <SwapPageHeader proMode={isProMode} />
+      {/* <SwapPageHeader proMode={isProMode} /> */}
       {isProMode ? (
         <SwapProMain
           pairId={pairId}
