@@ -18,8 +18,7 @@ import { shortenAddress, useIsSupportedNetwork } from 'utils';
 import useENSName from 'hooks/useENSName';
 import { WalletModal, NetworkSelectionModal } from 'components';
 import { useActiveWeb3React } from 'hooks';
-import QuickIcon from 'assets/images/quickIcon.svg';
-import QuickLogo from 'assets/images/quickLogo.png';
+import QuickIcon from 'assets/images/black-stallion-logo.png';
 import { ReactComponent as ThreeDotIcon } from 'assets/images/ThreeDot.svg';
 // import { ReactComponent as LightIcon } from 'assets/images/LightIcon.svg';
 import WalletIcon from 'assets/images/WalletIcon.png';
@@ -43,7 +42,7 @@ const newTransactionsFirst = (a: TransactionDetails, b: TransactionDetails) => {
 const Header: React.FC = () => {
   const { t } = useTranslation();
   const history = useHistory();
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
   const { account } = useActiveWeb3React();
   const isSupportedNetwork = useIsSupportedNetwork();
   const { ENSName } = useENSName(account ?? undefined);
@@ -69,7 +68,14 @@ const Header: React.FC = () => {
   const toggleNetworkSelectionModal = useNetworkSelectionModalToggle();
   const deviceWidth = useDeviceWidth();
   const [headerClass, setHeaderClass] = useState('');
-
+  console.log(
+    'pathName',
+    pathname,
+    search,
+    pathname.includes('swap'),
+    search.includes('swapIndex=1'),
+    search.includes('swapIndex=3'),
+  );
   const changeHeaderBg = () => {
     if (window.scrollY > 0) {
       setHeaderClass('bg-palette');
@@ -127,9 +133,17 @@ const Header: React.FC = () => {
       link: `/swap?currency0=ETH${swapCurrencyStr}`,
       text: t('swap'),
       id: 'swap-page-link',
-      onClick: async () => {
-        /* */
-      },
+      // onClick: async () => {
+      //   /* */
+      // },
+    });
+    menuItems.push({
+      link: `/swap?currency0=ETH${swapCurrencyStr}&swapIndex=3`,
+      text: t('Limit'),
+      id: 'limit-page-link',
+      // onClick: async () => {
+      //   /* */
+      // },
     });
   }
   // if (showPerps) {
@@ -279,7 +293,7 @@ const Header: React.FC = () => {
       <Link to={`/swap?currency0=ETH${swapCurrencyStr}`}>
         <img
           src={QuickIcon}
-          alt='QuickLogo'
+          alt='Black Stalion Logo'
           height={mobileWindowSize ? 40 : 60}
         />
       </Link>
@@ -290,10 +304,19 @@ const Header: React.FC = () => {
               key={val.id}
               id={val.id}
               className={`menuItem ${
-                pathname !== '/' && val.link.includes(pathname) ? 'active' : ''
+                (pathname.includes('swap')
+                ? (search.includes('swapIndex=1') &&
+                    val.id === 'swap-page-link') ||
+                  (search.includes('swapIndex=3') &&
+                    val.id === 'limit-page-link')
+                : val.link.includes(pathname))
+                  ? 'active'
+                  : ''
               }`}
               onClick={() => {
+                // @ts-ignore
                 if (val.onClick) {
+                  // @ts-ignore
                   val.onClick();
                 } else {
                   if (val.isExternal) {
@@ -351,7 +374,9 @@ const Header: React.FC = () => {
                         id={val.id}
                         onClick={() => {
                           setOpenDetailMenu(false);
+                          // @ts-ignore
                           if (val.onClick) {
+                            // @ts-ignore
                             val.onClick();
                           } else {
                             if (val.isExternal) {
@@ -379,30 +404,44 @@ const Header: React.FC = () => {
       {tabletWindowSize && (
         <Box className='mobileMenuContainer'>
           <Box className='mobileMenu'>
-            {menuItems.slice(0, 4).map((val) => (
-              <Box
-                key={val.id}
-                id={val.id}
-                className={`menuItem ${
-                  pathname !== '/' && val.link.includes(pathname)
-                    ? 'active'
-                    : ''
-                }`}
-                onClick={() => {
-                  if (val.onClick) {
-                    val.onClick();
-                  } else {
-                    if (val.isExternal) {
-                      window.open(val.externalLink, val.target ?? '_blank');
+            {menuItems.slice(0, 4).map((val) => {
+              console.log(
+                'pathnameswapIndex',
+                search.includes('swapIndex=1') && val.id === 'swap-page-link',
+              );
+              return (
+                <Box
+                  key={val.id}
+                  id={val.id}
+                  className={`menuItem ${
+                    pathname !== '/' &&
+                    (pathname.includes('swap')
+                      ? (search.includes('swapIndex=1') &&
+                          val.id === 'swap-page-link') ||
+                        (search.includes('swapIndex=3') &&
+                          val.id === 'limit-page-link')
+                      : val.link.includes(pathname))
+                      ? 'active'
+                      : ''
+                  }`}
+                  onClick={() => {
+                    // @ts-ignore
+                    if (val.onClick) {
+                      // @ts-ignore
+                      val.onClick();
                     } else {
-                      history.push(val.link);
+                      if (val.isExternal) {
+                        window.open(val.externalLink, val.target ?? '_blank');
+                      } else {
+                        history.push(val.link);
+                      }
                     }
-                  }
-                }}
-              >
-                <small>{val.text}</small>
-              </Box>
-            ))}
+                  }}
+                >
+                  <small>{val.text}</small>
+                </Box>
+              );
+            })}
             {menuItems.length > 4 && (
               <Box className='flex menuItem'>
                 <ThreeDotIcon
@@ -422,7 +461,9 @@ const Header: React.FC = () => {
                           id={val.id}
                           onClick={() => {
                             setOpenDetailMenu(false);
+                            // @ts-ignore
                             if (val.onClick) {
+                              // @ts-ignore
                               val.onClick();
                             } else {
                               if (val.isExternal) {

@@ -35,7 +35,8 @@
 }
 
 .panel {
-  background: $bgPalette;
+  background: rgba(34, 34, 34, 0) !important;
+  background-image: linear-gradient(rgba(119, 214, 255, 0.08), rgba(202, 169, 255, 0.08)) !important;
   border-radius: 20px;
   padding: 24px;
   @include media('screen', '<phone') {
