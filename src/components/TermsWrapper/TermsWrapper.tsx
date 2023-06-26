@@ -19,7 +19,7 @@ export default function TermsWrapper({ children }: { children: ReactNode }) {
       !currentTOSVersion ||
       savedTermsVersion !== currentTOSVersion
     ) {
-      setShowTerms(true);
+      setShowTerms(false);
     }
   }, [currentTOSVersion]);
 

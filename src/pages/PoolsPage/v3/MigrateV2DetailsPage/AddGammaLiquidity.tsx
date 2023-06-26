@@ -310,10 +310,14 @@ const AddGammaLiquidity: React.FC<{
     } catch (error) {
       console.error('Failed to send transaction', error);
       const errorMsg =
+        // @ts-ignore
         error && error.message
-          ? error.message.toLowerCase()
-          : error && error.data && error.data.message
-          ? error.data.message.toLowerCase()
+          ? // @ts-ignore
+            error.message.toLowerCase()
+          : // @ts-ignore
+          error && error.data && error.data.message
+          ? // @ts-ignore
+            error.data.message.toLowerCase()
           : '';
       setAddingLiquidity(false);
       setErrorMessage(
@@ -321,7 +325,8 @@ const AddGammaLiquidity: React.FC<{
           ? t('gammaImproperRatio')
           : errorMsg.indexOf('price change overflow') > -1
           ? t('gammaPriceOverflow')
-          : error?.code === 4001 || error.code === 'ACTION_REJECTED'
+          : // @ts-ignore
+          error?.code === 4001 || error.code === 'ACTION_REJECTED'
           ? ''
           : t('errorInTx'),
       );

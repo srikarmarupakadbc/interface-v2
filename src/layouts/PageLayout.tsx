@@ -53,7 +53,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, name }) => {
       window.location.host !== 'localhost:3001' &&
       window.location.host !== 'testing-orbs.interface-v2-01.pages.dev'
     ) {
-      setOpenPassModal(true);
+      // setOpenPassModal(true);
     }
   }, []);
 

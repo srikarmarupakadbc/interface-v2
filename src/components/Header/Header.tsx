@@ -32,7 +32,7 @@ import 'components/styles/Header.scss';
 import { useTranslation } from 'react-i18next';
 import { getConfig } from 'config/index';
 import useDeviceWidth from 'hooks/useDeviceWidth';
-import { USDC, USDT } from 'constants/v3/addresses';
+import { BS, USDC, USDT } from 'constants/v3/addresses';
 import { ChainId } from '@uniswap/sdk';
 import { networkConnection, walletConnectConnection } from 'connectors';
 
@@ -116,17 +116,20 @@ const Header: React.FC = () => {
   const menuItems = [];
 
   const swapCurrencyStr = useMemo(() => {
-    if (!chainId) return '';
-    if (chainId === ChainId.ZKTESTNET)
-      return `&currency1=${USDT[chainId].address}`;
-    return `&currency1=${USDC[chainId].address}`;
+    if (!chainId) return BS[137].address;
+    // if (chainId === ChainId.ZKTESTNET)
+    //   return `&currency1=${USDT[chainId].address}`;
+    return `&currency1=${BS[chainId].address}`;
   }, [chainId]);
-
+  console.log('swapCurrencyStr', swapCurrencyStr);
   if (showSwap) {
     menuItems.push({
       link: `/swap?currency0=ETH${swapCurrencyStr}`,
       text: t('swap'),
       id: 'swap-page-link',
+      onClick: async () => {
+        /* */
+      },
     });
   }
   // if (showPerps) {

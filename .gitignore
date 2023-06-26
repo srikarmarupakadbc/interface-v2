@@ -28,3 +28,4 @@ cypress/fixtures/example.json
 
 .vercel
 .npmrc
+.idea

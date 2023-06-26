@@ -251,6 +251,7 @@ const SwapV3Page: React.FC = () => {
         await gatherPermitSignature();
       } catch (error) {
         // try to approve if gatherPermitSignature failed for any reason other than the user rejecting it
+        // @ts-ignore
         if (error?.code !== 4001) {
           await approveCallback();
         }
@@ -533,14 +534,8 @@ const SwapV3Page: React.FC = () => {
     <>
       <Helmet>
         {/* //TODO */}
-        <meta
-          name={'description'}
-          content={`Quickswap is one of the first concentrated liquidity DEX on Polygon: best rates for traders and liquidity providers on the Polygon Network, with built-in farming and adaptive fees.`}
-        />
-        <meta
-          name={'keywords'}
-          content={`best dex, quickswap exchange, quickswap crypto, quickswap finance, quickswap dex, defi, polygon dex, exchange on polygon, matic exchange`}
-        />
+        <meta name={'description'} content={`Black Stallion.`} />
+        <meta name={'keywords'} content={`best dex`} />
       </Helmet>
       <TokenWarningModal
         isOpen={importTokensNotInDefault.length > 0 && !dismissTokenWarning}

@@ -11,16 +11,16 @@ const Background: React.FC<{ fallback: boolean | undefined }> = ({
   const showDefaultBG = fallback || pathname !== '/';
   return (
     <Box className='heroBkg'>
-      <img
-        className={showDefaultBG ? 'hidden' : ''}
-        src={HeroBkg}
-        alt='Hero Background'
-      />
-      <img
-        className={showDefaultBG ? '' : 'hidden'}
-        src={defaultHeroBkg}
-        alt='Hero Background'
-      />
+      {/*<img*/}
+      {/*  className={showDefaultBG ? 'hidden' : ''}*/}
+      {/*  src={HeroBkg}*/}
+      {/*  alt='Hero Background'*/}
+      {/*/>*/}
+      {/*<img*/}
+      {/*  className={showDefaultBG ? '' : 'hidden'}*/}
+      {/*  src={defaultHeroBkg}*/}
+      {/*  alt='Hero Background'*/}
+      {/*/>*/}
     </Box>
   );
 };

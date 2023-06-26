@@ -19,6 +19,7 @@ export function useGasPrice() {
       const { standard } = await gasPriceReq.json();
       setGasPrice({ fetched: standard, override: standard < 36 });
     } catch (err) {
+      // @ts-ignore
       console.error('Gas price fetching failed', err.code, err.message);
     }
     setGasPriceLoading(false);

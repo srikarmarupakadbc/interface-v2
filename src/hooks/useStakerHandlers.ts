@@ -225,7 +225,9 @@ export function useFarmingHandlers() {
         updateV3Stake({ txConfirmed: true });
       } catch (err) {
         updateV3Stake({ txError: 'failed' });
+        // @ts-ignore
         if (err.code !== 4001) {
+          // @ts-ignore
           throw new Error(t('undeposit') + ' ' + err.message);
         }
       }

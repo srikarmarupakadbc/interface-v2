@@ -577,6 +577,7 @@ export class Trade<
         [amountOut] = await pool.getOutputAmount(amountIn);
       } catch (error) {
         // input too low
+        // @ts-ignore
         if (error.isInsufficientInputAmountError) {
           continue;
         }
@@ -674,6 +675,7 @@ export class Trade<
         [amountIn] = await pool.getInputAmount(amountOut);
       } catch (error) {
         // not enough liquidity in this pool
+        // @ts-ignore
         if (error.isInsufficientReservesError) {
           continue;
         }
