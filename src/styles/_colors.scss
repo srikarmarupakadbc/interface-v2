@@ -54,7 +54,7 @@
 
 .bg-primary {
   background-image: $primaryGradient !important;
-  color: $textPrimary;
+  color: $textPrimary !important;
   // & :hover{
   //   background-image: $primaryGradientHover !important;
   //   opacity: 0.2;
