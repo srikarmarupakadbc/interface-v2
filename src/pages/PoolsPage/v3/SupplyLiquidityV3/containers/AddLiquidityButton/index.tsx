@@ -345,10 +345,14 @@ export function AddLiquidityButton({
       } catch (error) {
         console.error('Failed to send transaction', error);
         const errorMsg =
+          // @ts-ignore
           error && error.message
-            ? error.message.toLowerCase()
-            : error && error.data && error.data.message
-            ? error.data.message.toLowerCase()
+            ? // @ts-ignore
+              error.message.toLowerCase()
+            : // @ts-ignore
+            error && error.data && error.data.message
+            ? // @ts-ignore
+              error.data.message.toLowerCase()
             : '';
         setAttemptingTxn(false);
         setTxPending(false);
@@ -357,7 +361,8 @@ export function AddLiquidityButton({
             ? t('gammaImproperRatio')
             : errorMsg.indexOf('price change overflow') > -1
             ? t('gammaPriceOverflow')
-            : error?.code === 4001
+            : // @ts-ignore
+            error?.code === 4001
             ? t('txRejected')
             : t('errorInTx'),
         );
@@ -433,6 +438,7 @@ export function AddLiquidityButton({
                   console.error('Failed to send transaction', error);
                   setTxPending(false);
                   setAddLiquidityErrorMessage(
+                    // @ts-ignore
                     error?.code === 4001 ? t('txRejected') : t('errorInTx'),
                   );
                 }

@@ -12,7 +12,6 @@ import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { useIsV2 } from 'state/application/hooks';
 import { Limit, TWAP } from './LimitAndTWAP/LimitAndTWAP';
-import SwapCrossChain from './SwapCrossChain';
 import SwapV3Page from './V3/Swap';
 // import { ChainId } from '@uniswap/sdk';
 // import { USDC, USDT } from 'constants/v3/addresses';
@@ -324,9 +323,6 @@ const SwapMain: React.FC = () => {
         )}
         {v2 && Number(swapType) === SWAP_NORMAL && <Swap />}
         {/* {v3 && Number(swapType) === SWAP_V3 && <SwapV3Page />} */}
-        {showCrossChain && Number(swapType) === SWAP_CROSS_CHAIN && (
-          <SwapCrossChain />
-        )}
         {showLimitOrder && Number(swapType) === SWAP_LIMIT && <Limit />}
         {swapType === SWAP_TWAP.toString() && <TWAP />}
       </Box>

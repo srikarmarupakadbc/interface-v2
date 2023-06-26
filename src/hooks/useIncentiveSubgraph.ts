@@ -262,6 +262,7 @@ export function useFarmingSubgraph() {
 
       return eternalFarmings[0];
     } catch (err) {
+      // @ts-ignore
       throw new Error('Fetch eternal farming ' + err.message);
     }
   }
@@ -382,6 +383,7 @@ export function useFarmingSubgraph() {
       setHasTransferredPositionsLoading(false);
     } catch (err) {
       throw new Error(
+        // @ts-ignore
         'Has transferred positions ' + err.code + ' ' + err.message,
       );
     } finally {
@@ -688,6 +690,7 @@ export function useFarmingSubgraph() {
       setTransferredPositions(_positions);
     } catch (err) {
       throw new Error(
+        // @ts-ignore
         'Transferred positions ' + 'code: ' + err.code + ', ' + err.message,
       );
     } finally {
@@ -775,6 +778,7 @@ export function useFarmingSubgraph() {
 
       setPositionsEternal(_positions);
     } catch (error) {
+      // @ts-ignore
       throw new Error('Eternal farms loading' + error.code + error.message);
     }
   }

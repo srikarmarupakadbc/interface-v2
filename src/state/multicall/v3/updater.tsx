@@ -60,7 +60,9 @@ async function fetchChunk(
     return returnData;
   } catch (error) {
     if (
+      // @ts-ignore
       error.code === -32000 ||
+      // @ts-ignore
       error.message?.indexOf('header not found') !== -1
     ) {
       throw new RetryableError(

@@ -1,5 +1,5 @@
 {
-  "v3": true,
+  "v3": false,
   "v2": true,
   "rpc": "https://polygon-rpc.com/",
   "blockExplorer": "https://polygonscan.com",
@@ -14,29 +14,29 @@
   },
   "swap": {
     "available": true,
-    "bestTrade": true,
+    "bestTrade": false,
     "proMode": true,
     "limitOrder": true,
-    "twapOrder": true,
-    "crossChain": true
+    "twapOrder": false,
+    "crossChain": false
   },
   "pools": {
     "available": true
   },
   "farm": {
-    "available": true
+    "available": false
   },
   "lair": {
-    "available": true,
-    "oldLair": true,
-    "newLair": true,
-    "syrup": true
+    "available": false,
+    "oldLair": false,
+    "newLair": false,
+    "syrup": false
   },
   "convert": {
     "available": true
   },
   "predictions": {
-    "available": true
+    "available": false
   },
   "analytics": {
     "available": true
@@ -45,18 +45,18 @@
     "available": false
   },
   "migrate": {
-    "available": true
+    "available": false
   },
   "gamingHub": {
-    "available": true
+    "available": false
   },
   "leaderboard": {
-    "available": true
+    "available": false
   },
   "safe": {
     "available": false
   },
   "perps": {
-    "available": true
+    "available": false
   }
 }

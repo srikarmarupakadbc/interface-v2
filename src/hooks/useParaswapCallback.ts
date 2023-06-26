@@ -216,9 +216,11 @@ export function useParaswapCallback(
 
           return { response, summary: withVersion };
         } catch (error) {
+          // @ts-ignore
           if (error?.code === 4001) {
             throw new Error('Transaction rejected.');
           } else {
+            // @ts-ignore
             throw new Error(`Swap failed: ${error.message}`);
           }
         }

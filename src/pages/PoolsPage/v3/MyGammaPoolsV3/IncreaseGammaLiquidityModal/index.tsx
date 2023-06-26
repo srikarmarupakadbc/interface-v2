@@ -312,6 +312,7 @@ export default function IncreaseGammaLiquidityModal({
       setAttemptingTxn(false);
       setTxPending(false);
       setAddErrorMessage(
+        // @ts-ignore
         error?.code === 4001 ? t('txRejected') : t('errorInTx'),
       );
     }

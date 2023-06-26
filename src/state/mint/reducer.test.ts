@@ -7,6 +7,7 @@ describe('mint reducer', () => {
   let store: Store<MintState>;
 
   beforeEach(() => {
+    // @ts-ignore
     store = createStore(reducer, {
       independentField: Field.CURRENCY_A,
       typedValue: '',

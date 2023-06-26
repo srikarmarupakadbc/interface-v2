@@ -104,7 +104,9 @@ const ContestPage: React.FC = () => {
       setError(null);
     } catch (error) {
       setLoading(false);
+      // @ts-ignore
       console.error(error, 'message', error.message);
+      // @ts-ignore
       setError(error.message);
     }
   };

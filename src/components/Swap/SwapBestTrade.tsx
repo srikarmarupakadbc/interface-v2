@@ -327,6 +327,7 @@ const SwapBestTrade: React.FC<{
       setOptimalRateError('');
       return rate;
     } catch (err) {
+      // @ts-ignore
       setOptimalRateError(err.message);
       return;
     }

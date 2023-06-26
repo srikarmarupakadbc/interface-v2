@@ -13,6 +13,7 @@ describe('application reducer', () => {
   let store: Store<ApplicationState>;
 
   beforeEach(() => {
+    // @ts-ignore
     store = createStore(reducer, {
       popupList: [],
       blockNumber: {

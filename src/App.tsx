@@ -119,7 +119,7 @@ const App: React.FC = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Route component={GoogleAnalyticsReporter} />
+      {/*<Route component={GoogleAnalyticsReporter} />*/}
       <Provider store={store}>
         <Providers>
           <TermsWrapper>

@@ -26,6 +26,7 @@ class AppJsonRpcProvider extends StaticJsonRpcProvider {
   constructor(chainId: ChainId) {
     super(rpcMap[chainId], {
       chainId,
+      // @ts-ignore
       name: CHAIN_IDS_TO_NAMES[chainId],
     });
 
