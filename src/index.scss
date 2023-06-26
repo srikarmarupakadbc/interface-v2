@@ -68,7 +68,9 @@ body {
 
 .wrapper {
   padding: 24px;
-  background: $bgPalette;
+  background: #22222200!important;
+  background-image: linear-gradient(rgba(119,214,255,.08),rgba(202,169,255,.08))!important;
+  border: 1px solid #22426a!important;
   border-radius: 20px;
   @include media("screen", "<phone") {
     padding: 16px 12px
@@ -401,4 +403,12 @@ body {
 
 .p-1 {
   padding: 1rem;
+}
+.twap-card {
+  backdrop-filter: blur(5px);
+  background: #0e0c1d57!important;
+}
+
+.twap-button {
+  background: linear-gradient(135deg, #4e34e6, #e219db)!important;
 }

@@ -12,6 +12,8 @@
   z-index: 3;
   align-items: center;
   justify-content: space-between;
+  backdrop-filter: blur(5px);
+  background: #0e0c1d57!important;
   & a {
     display: flex;
   }
@@ -95,7 +97,6 @@
     }
     &.active {
       color: $textPrimary;
-      background: $secondary1;
       .menuItemSparkleTop {
         top: 0px;
       }
@@ -232,7 +233,7 @@
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 64px;
+  height: 164px;
   width: 100%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;

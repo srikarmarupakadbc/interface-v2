@@ -18,7 +18,8 @@
   border-radius: 20px;
   transform: translate(-50%, -50%);
   outline: none;
-  background-color: $bgPalette;
+  backdrop-filter: blur(5px);
+  background: rgba(14, 12, 29, 0.8) !important;
 }
 
 .searchModalWrapper {

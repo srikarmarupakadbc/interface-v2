@@ -191,7 +191,7 @@ const TransactionConfirmationModal: React.FC<ConfirmationModalProps> = ({
   // confirmation screen
   return (
     <CustomModal open={isOpen} onClose={onDismiss} modalWrapper={modalWrapper}>
-      <img src={ModalBg} alt='Modal Back' className='txModalBG' />
+      {/*<img src={ModalBg} alt='Modal Back' className='txModalBG' />*/}
       <Box position='relative' zIndex={2}>
         {attemptingTxn ? (
           <ConfirmationPendingContent

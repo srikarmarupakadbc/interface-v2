@@ -57,7 +57,7 @@ const PoolsPage: React.FC = () => {
       <Grid container spacing={4}>
         <Grid item xs={12} sm={12} md={5}>
           <Box className='wrapper'>
-            {!isV2 ? <SupplyLiquidityV3 /> : <SupplyLiquidity />}
+            <SupplyLiquidity />
           </Box>
           {/* <Box maxWidth={isMobile ? '320px' : '352px'} margin='16px auto 0'>
             <AdsSlider sort='pools' />
@@ -65,13 +65,8 @@ const PoolsPage: React.FC = () => {
         </Grid>
         <Grid item xs={12} sm={12} md={7}>
           <Box className='wrapper'>
-            {!isV2 ? <MyLiquidityPoolsV3 /> : <YourLiquidityPools />}
+            <YourLiquidityPools />
           </Box>
-          {!isV2 && Object.values(allGammaPairs).length > 0 && (
-            <Box mt={4} className='wrapper'>
-              <MyGammaPoolsV3 />
-            </Box>
-          )}
         </Grid>
       </Grid>
       {/* <Box maxWidth={isMobile ? '320px' : '1136px'} margin='24px auto'>
