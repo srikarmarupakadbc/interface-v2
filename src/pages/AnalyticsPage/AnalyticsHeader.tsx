@@ -55,7 +55,7 @@ const AnalyticsHeader: React.FC<AnalyticHeaderProps> = ({
   return (
     <Box width='100%' mb={3}>
       <Box mb={4} className='flex items-center'>
-        <h4>{t('BSM Analytics')}</h4>
+        <h4>{t('Black Stallion Analytics')}</h4>
         {v2 && v3 && !isPairDetails && (
           <Box ml={2}>
             <VersionToggle />

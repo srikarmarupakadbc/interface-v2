@@ -68,14 +68,6 @@ const Header: React.FC = () => {
   const toggleNetworkSelectionModal = useNetworkSelectionModalToggle();
   const deviceWidth = useDeviceWidth();
   const [headerClass, setHeaderClass] = useState('');
-  console.log(
-    'pathName',
-    pathname,
-    search,
-    pathname.includes('swap'),
-    search.includes('swapIndex=1'),
-    search.includes('swapIndex=3'),
-  );
   const changeHeaderBg = () => {
     if (window.scrollY > 0) {
       setHeaderClass('bg-palette');
@@ -127,7 +119,6 @@ const Header: React.FC = () => {
     //   return `&currency1=${USDT[chainId].address}`;
     return `&currency1=${BS[chainId].address}`;
   }, [chainId]);
-  console.log('swapCurrencyStr', swapCurrencyStr);
   if (showSwap) {
     menuItems.push({
       link: `/swap?currency0=ETH${swapCurrencyStr}`,

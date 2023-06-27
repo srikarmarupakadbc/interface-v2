@@ -66,8 +66,8 @@ import Background from 'layouts/Background';
 import GasUpdater from 'state/application/gasUpdater';
 import { RedirectExternal } from 'components/RedirectExternal/RedirectExternal';
 import NotFound404Page from 'pages/NotFound404Page';
-// import { USDC, USDT } from 'constants/v3/addresses';
-// import { ChainId } from '@uniswap/sdk';
+import { USDC, USDT, BS } from 'constants/v3/addresses';
+import { ChainId } from '@uniswap/sdk';
 
 const ThemeProvider: React.FC = ({ children }) => {
   const theme = mainTheme;
@@ -109,12 +109,9 @@ function Updaters() {
 const queryClient = new QueryClient();
 
 const App: React.FC = () => {
-  // const { chainId, connector } = useActiveWeb3React();
   // const swapCurrencyStr = useMemo(() => {
   //   if (!chainId) return '';
-  //   if (chainId === ChainId.ZKTESTNET)
-  //     return `&currency1=${USDT[chainId].address}`;
-  //   return `&currency1=${USDC[chainId].address}`;
+  //   return `&currency1=${BS[chainId].address}`;
   // }, [chainId]);
 
   return (
@@ -130,10 +127,16 @@ const App: React.FC = () => {
                 <Route exact path='/'>
                   <PageLayout>
                     {/* <LandingPage /> */}
-                    <SwapPage />
+                    {
+                      (location.href = location.href =
+                        location.origin +
+                        `/#/swap?currency0=ETH` +
+                        `&currency1=${BS[137].address}` +
+                        `&swapIndex=0`)
+                    }
+                    {/* <SwapPage /> */}
                   </PageLayout>
                 </Route>
-                {/* <Route exact path={`/swap?currency0=ETH${swapCurrencyStr}`}> */}
                 <Route exact path='/swap/:version?'>
                   <PageLayout>
                     <SwapPage />
