@@ -236,13 +236,13 @@ const Header: React.FC = () => {
       isNew: true,
     });
   }
-  if (showAnalytics) {
-    menuItems.push({
-      link: `/analytics/v2`,
-      text: t('analytics'),
-      id: 'analytics-page-link',
-    });
-  }
+  // if (showAnalytics) {
+  //   menuItems.push({
+  //     link: `/analytics/v2`,
+  //     text: t('analytics'),
+  //     id: 'analytics-page-link',
+  //   });
+  // }
 
   const outLinks: any[] = [
     // {

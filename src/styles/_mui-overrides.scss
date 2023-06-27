@@ -10,6 +10,7 @@ html {
       box-sizing: border-box;
     }
   }
+
   .MuiTooltip-tooltip {
     background-color: $secondary1;
     border: 1px solid $divider;
@@ -18,7 +19,13 @@ html {
     border-radius: 14px;
     color: $textPrimary;
   }
+
   .twap-token-select{
     background-image: $primaryGradient !important;
+  }
+
+  .twap-powered-by{
+    // display: none;
+    visibility: hidden;
   }
 }
