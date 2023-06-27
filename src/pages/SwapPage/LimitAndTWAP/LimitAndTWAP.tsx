@@ -67,12 +67,6 @@ function TWAPBase({ Component }: { Component: FC<any> }) {
         onDstTokenSelected={onDstSelect}
         getTokenLogoURL={getLogo}
       />
-      <QuickSwapOrders
-        dappTokens={allTokens as any}
-        provider={library?.provider}
-        account={account}
-        getTokenLogoURL={getLogo}
-      />
     </>
   );
 }

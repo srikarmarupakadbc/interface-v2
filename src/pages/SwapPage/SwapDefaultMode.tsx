@@ -7,6 +7,12 @@ import { SwapBuySellMiniWidget } from './BuySellWidget';
 import LiquidityPools from './LiquidityPools';
 import SwapMain from './SwapMain';
 import SwapNewsWidget from './SwapNewWidget';
+import { Orders as QuickSwapOrders } from '@orbs-network/twap-ui-quickswap';
+import { useAllTokens } from '../../hooks/Tokens';
+import { useActiveWeb3React } from '../../hooks';
+import { getTokenLogoURL } from '../../utils/getTokenLogoURL';
+import { getConfig } from '../../config';
+import useParsedQueryString from '../../hooks/useParsedQueryString';
 
 type NavParams = {
   swapIndex: string | undefined;
@@ -25,7 +31,16 @@ const SwapDefaultMode: React.FC<{
   const [rightOpen, setRightOpen] = useState(true);
   const query = useQuery();
   const [disabledLeft, setDisabledLeft] = useState(false);
+  const allTokens = useAllTokens();
+  const { account, chainId, library } = useActiveWeb3React();
+  const config = getConfig(chainId);
 
+  const showLimitOrder = config['swap']['limitOrder'];
+  const parsedQs = useParsedQueryString();
+  const swapType = parsedQs.swapIndex;
+  const getLogo = (value: string) => {
+    return getTokenLogoURL(value).find((it) => it !== 'error') as any;
+  };
   useEffect(() => {
     if (query.get('swapIndex') === '4') {
       setDisabledLeft(true);
@@ -40,55 +55,6 @@ const SwapDefaultMode: React.FC<{
     <Grid>
       <Grid container justifyContent='center' spacing={2}>
         <Grid item xs={12} sm={12} md={6} lg={4}>
-          <Grid container justifyContent='flex-end' spacing={2}>
-            {/* <Grid item>
-              <Box
-                sx={{ display: { xs: 'none', lg: 'block' } }}
-                className={`btn-swap-widget ${
-                  disabledLeft ? 'btn-swap-widget-disabled' : ''
-                } `}
-                onClick={() => {
-                  if (disabledLeft) return;
-                  setLeftOpen(!leftOpen);
-                }}
-              >
-                {!leftOpen && <NavigateBefore />}
-                {leftOpen && <NavigateNext />}
-              </Box>
-            </Grid> */}
-            {leftOpen && (
-              <Grid item xs={12} lg={10}>
-                <Grid container spacing={2}>
-                  {/* <Grid item xs={12}>
-                    <Box
-                      className='wrapper'
-                      sx={{ marginTop: { xs: '-16px', lg: '0px' } }}
-                    >
-                      {token1 && <SwapTokenDetailsHorizontal token={token1} />}
-                      <Divider
-                        style={{
-                          marginLeft: '-24px',
-                          marginRight: '-24px',
-                          marginTop: '12px',
-                          marginBottom: '12px',
-                        }}
-                      />
-                      {token2 && <SwapTokenDetailsHorizontal token={token2} />}
-                    </Box>
-                  </Grid> */}
-                  {/* <Grid item xs={12}>
-                    {token1 && token2 && (
-                      <Box className='wrapper'>
-                        <LiquidityPools token1={token1} token2={token2} />
-                      </Box>
-                    )}
-                  </Grid> */}
-                </Grid>
-              </Grid>
-            )}
-          </Grid>
-        </Grid>
-        <Grid item xs={12} sm={12} md={6} lg={4}>
           <Box className='wrapper'>
             <SwapMain />
           </Box>
@@ -96,41 +62,18 @@ const SwapDefaultMode: React.FC<{
             <AdsSlider sort='swap' />
           </Box> */}
         </Grid>
-        <Grid item lg={4}>
-          <Grid container justifyContent='flex-start' spacing={2}>
-            {/* <Grid item xs={12}>
-              {token1 && token2 && (
-                <Box className='wrapper'>
-                  <LiquidityPools token1={token1} token2={token2} />
-                </Box>
-              )}
-            </Grid> */}
-            {/* {rightOpen && (
-              <Grid item xs={12} lg={10}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12}>
-                    <Box className='wrapper'>
-                      <SwapBuySellMiniWidget />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <SwapNewsWidget />
-                  </Grid>
-                </Grid>
-              </Grid>
-            )} */}
-            {/* <Grid item>
-              <Box
-                className='btn-swap-widget'
-                sx={{ display: { xs: 'none', lg: 'block' } }}
-                onClick={() => setRightOpen(!rightOpen)}
-              >
-                {rightOpen && <NavigateBefore />}
-                {!rightOpen && <NavigateNext />}
-              </Box>
-            </Grid> */}
+        {showLimitOrder && Number(swapType) === 3 && (
+          <Grid item xs={12} sm={12} md={6} lg={6}>
+            <Box className={'wrapper p-1'}>
+              <QuickSwapOrders
+                dappTokens={allTokens as any}
+                provider={library?.provider}
+                account={account}
+                getTokenLogoURL={getLogo}
+              />
+            </Box>
           </Grid>
-        </Grid>
+        )}
       </Grid>
     </Grid>
   );

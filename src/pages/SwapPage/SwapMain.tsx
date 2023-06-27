@@ -213,8 +213,6 @@ const SwapMain: React.FC = () => {
                   aria-expanded={open ? 'true' : undefined}
                   variant='text'
                   disableElevation
-                  onClick={handleClickListItem}
-                  endIcon={<KeyboardArrowDown />}
                   className={`tab tabMenu ${
                     selectedIndex !== SWAP_CROSS_CHAIN ? 'activeTab' : ''
                   }`}
@@ -222,29 +220,6 @@ const SwapMain: React.FC = () => {
                   {t(dropDownMenuText)}
                 </Button>
               )}
-              <Menu
-                id='swap-menu'
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  'aria-labelledby': 'swap-button',
-                  role: 'listbox',
-                }}
-              >
-                {SwapDropdownTabs.filter((d) => d.visible !== false).map(
-                  (option, index) => (
-                    <MenuItem
-                      key={option.key}
-                      disabled={option.key === selectedIndex}
-                      selected={option.key === selectedIndex}
-                      onClick={(event) => handleMenuItemClick(event, index)}
-                    >
-                      {t(option.name)}
-                    </MenuItem>
-                  ),
-                )}
-              </Menu>
               {/* {showCrossChain && (
                 <Box
                   className={`tab ${
