@@ -3,7 +3,7 @@
 
 .header {
   top: 0px;
-  padding: 0 8%;
+  padding: 0 24px;
   position: fixed;
   width: 100%;
   display: flex;
@@ -51,6 +51,28 @@
     padding: 0 16px;
     position: relative;
   }
+}
+.header {
+  --bs-gutter-x:1.5rem;--bs-gutter-y:0;margin-left:auto;margin-right:auto;padding-left:calc(var(--bs-gutter-x)*.5);padding-right:calc(var(--bs-gutter-x)*.5);width:100%;
+  margin: 0% auto;
+  left: 0;
+  right: 0;
+
+}
+@media (min-width:576px){
+  .header{max-width:540px;}
+}
+@media (min-width:768px){
+  .header{max-width:720px;}
+}
+@media (min-width:992px){
+  .header{max-width:960px;}
+}
+@media (min-width:1200px){
+  .header{max-width:1140px;}
+}
+@media (min-width:1400px){
+  .header{max-width:1320px;}
 }
 .mainMenu {
   position: absolute;
