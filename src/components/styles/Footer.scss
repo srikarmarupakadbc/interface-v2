@@ -5,8 +5,9 @@
   padding: 50px 100px;
   border-top: 1px solid $grey4;
   // padding-bottom: 110px;
-  position: relative;
+  position: absolute;
   bottom: 0;
+  width: 100%;
   & p {
     font-size: 14px;
     line-height: 24px;
