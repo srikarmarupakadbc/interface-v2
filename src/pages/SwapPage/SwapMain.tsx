@@ -13,8 +13,6 @@ import { useHistory } from 'react-router-dom';
 import { useIsV2 } from 'state/application/hooks';
 import { Limit, TWAP } from './LimitAndTWAP/LimitAndTWAP';
 import SwapV3Page from './V3/Swap';
-// import { ChainId } from '@uniswap/sdk';
-// import { USDC, USDT } from 'constants/v3/addresses';
 
 const SWAP_BEST_TRADE = 0;
 const SWAP_NORMAL = 1;
@@ -56,15 +54,9 @@ const SwapMain: React.FC = () => {
     if (v2) {
       tabs.push({ name: 'market', key: SWAP_NORMAL });
     }
-    // if (v3) {
-    //   tabs.push({ name: 'marketV3', key: SWAP_V3 });
-    // }
     if (showLimitOrder) {
       tabs.push({ name: 'limit', key: SWAP_LIMIT });
     }
-    // if (showTwapOrder) {
-    //   tabs.push({ name: 'twap', key: SWAP_TWAP });
-    // }
     if (showCrossChain) {
       tabs.push({
         name: 'crossChain',
@@ -89,12 +81,6 @@ const SwapMain: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = React.useState(
     Number(swapType?.toString() ?? '0'),
   );
-  // const swapCurrencyStr = useMemo(() => {
-  //   if (!chainId) return '';
-  //   if (chainId === ChainId.ZKTESTNET)
-  //     return `&currency1=${USDT[chainId].address}`;
-  //   return `&currency1=${USDC[chainId].address}`;
-  // }, [chainId]);
 
   const redirectWithSwapType = (swapTypeTo: number) => {
     const currentPath = history.location.pathname + history.location.search;
@@ -220,20 +206,6 @@ const SwapMain: React.FC = () => {
                   {t(dropDownMenuText)}
                 </Button>
               )}
-              {/* {showCrossChain && (
-                <Box
-                  className={`tab ${
-                    selectedIndex === SWAP_CROSS_CHAIN ? 'activeTab' : ''
-                  }`}
-                  onClick={() => {
-                    setSelectedIndex(SWAP_CROSS_CHAIN);
-                    setAnchorEl(null);
-                    redirectWithSwapType(SWAP_CROSS_CHAIN);
-                  }}
-                >
-                  <p className='trade-btn'>{t('crossChain')}</p>
-                </Box>
-              )} */}
             </Box>
           ) : (
             <>
@@ -260,22 +232,6 @@ const SwapMain: React.FC = () => {
               }}
             >
               <Box margin='0 16px' className='flex items-center'>
-                {/* {showProMode && (
-                  <Box className='flex items-center' mr={1}>
-                    <span
-                      className='text-secondary text-uppercase'
-                      style={{ marginRight: 8 }}
-                    >
-                      {t('proMode')}
-                    </span>
-                    <ToggleSwitch
-                      toggled={isProMode}
-                      onToggle={() => {
-                        redirectWithProMode(!isProMode);
-                      }}
-                    />
-                  </Box>
-                )} */}
                 <Box className='headingItem'>
                   <SettingsIcon onClick={() => setOpenSettingsModal(true)} />
                 </Box>

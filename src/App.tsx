@@ -109,14 +109,8 @@ function Updaters() {
 const queryClient = new QueryClient();
 
 const App: React.FC = () => {
-  // const swapCurrencyStr = useMemo(() => {
-  //   if (!chainId) return '';
-  //   return `&currency1=${BS[chainId].address}`;
-  // }, [chainId]);
-
   return (
     <QueryClientProvider client={queryClient}>
-      {/*<Route component={GoogleAnalyticsReporter} />*/}
       <Provider store={store}>
         <Providers>
           <TermsWrapper>

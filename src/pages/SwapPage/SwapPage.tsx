@@ -38,9 +38,7 @@ const SwapPage: React.FC = () => {
   const token2V3 = wrappedCurrencyV3(currenciesV3[Field.OUTPUT], chainIdToUse);
 
   const swapCurrencyStr = useMemo(() => {
-    if (!chainId) return '';
-    // if (chainId === ChainId.ZKTESTNET)
-    //   return `&currency1=${USDT[chainId].address}`;
+    if (!chainId) return `&currency1=${BS[137].address}`;
     return `&currency1=${BS[chainId].address}`;
   }, [chainId]);
 

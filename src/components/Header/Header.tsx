@@ -115,8 +115,6 @@ const Header: React.FC = () => {
 
   const swapCurrencyStr = useMemo(() => {
     if (!chainId) return BS[137].address;
-    // if (chainId === ChainId.ZKTESTNET)
-    //   return `&currency1=${USDT[chainId].address}`;
     return `&currency1=${BS[chainId].address}`;
   }, [chainId]);
   if (showSwap) {
@@ -137,39 +135,6 @@ const Header: React.FC = () => {
       // },
     });
   }
-  // if (showPerps) {
-  //   menuItems.push({
-  //     link: '/perps',
-  //     text: 'Perps',
-  //     id: 'perps-page-link',
-  //     isExternal: true,
-  //     externalLink: process?.env?.REACT_APP_PERPS_URL || '',
-  //     isNew: true,
-  //     onClick: async () => {
-  //       if (chainId !== ChainId.ZKEVM) {
-  //         const zkEVMconfig = getConfig(ChainId.ZKEVM);
-  //         const chainParam = {
-  //           chainId: ChainId.ZKEVM,
-  //           chainName: `${zkEVMconfig['networkName']} Network`,
-  //           rpcUrls: [zkEVMconfig['rpc']],
-  //           nativeCurrency: zkEVMconfig['nativeCurrency'],
-  //           blockExplorerUrls: [zkEVMconfig['blockExplorer']],
-  //         };
-  //         if (
-  //           connector === walletConnectConnection.connector ||
-  //           connector === networkConnection.connector
-  //         ) {
-  //           await connector.activate(ChainId.ZKEVM);
-  //         } else {
-  //           await connector.activate(chainParam);
-  //         }
-  //       }
-  //       if (process.env.REACT_APP_PERPS_URL) {
-  //         window.open(process.env.REACT_APP_PERPS_URL, '_self');
-  //       }
-  //     },
-  //   });
-  // }
   if (showPool) {
     menuItems.push({
       link: `/pools`,
@@ -177,13 +142,6 @@ const Header: React.FC = () => {
       id: 'pools-page-link',
     });
   }
-  // if (showFarm) {
-  //   menuItems.push({
-  //     link: `/farm`,
-  //     text: t('farm'),
-  //     id: 'farm-page-link',
-  //   });
-  // }
   if (showSafe) {
     menuItems.push({
       link: '/safe',
@@ -195,39 +153,6 @@ const Header: React.FC = () => {
       isNew: true,
     });
   }
-  // if (showLair) {
-  //   menuItems.push({
-  //     link: '/dragons',
-  //     text: t('dragonLair'),
-  //     id: 'dragons-page-link',
-  //   });
-  // }
-  // if (showGamingHub) {
-  //   menuItems.push({
-  //     link: '/gamehub',
-  //     text: 'Gaming Hub',
-  //     id: 'gamehub-page-link',
-  //     isExternal: true,
-  //     target: '_top',
-  //     externalLink: process?.env?.REACT_APP_GAMEHUB_URL || '',
-  //     isNew: true,
-  //   });
-  // }
-  // if (showLeaderboard) {
-  //   menuItems.push({
-  //     link: '/leader-board',
-  //     text: 'Leader Board',
-  //     id: 'contest-page-link',
-  //     isNew: true,
-  //   });
-  // }
-  // if (showConvert) {
-  //   menuItems.push({
-  //     link: '/convert',
-  //     text: t('convert'),
-  //     id: 'convert-quick',
-  //   });
-  // }
   if (showLending) {
     menuItems.push({
       link: '/lend',
